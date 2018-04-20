@@ -23,7 +23,8 @@ During the following lab, we shall deploy a small environment consisting of a vi
 First up, once you are logged in, lets create the resources we need for this lab.
 
 1. Select 'Create a resource' and look for 'Windows Server 2016 VM'
-![Create Cloud Shell Storage](images/createcloudshellstorage.png "Create Cloud Shell Storage")
+
+![Create resource](images/1 - Create Resource.png "Create resource")
 
 a.
 b.
