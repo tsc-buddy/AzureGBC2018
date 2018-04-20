@@ -5,8 +5,8 @@ Welcome! This repo has a bunch of content that will be getting covered in the Gl
 ## Content
 
 ### What will you need for the lab?
-A Microsoft Azure Account. You can sign up for a free trial [here](https://azure.microsoft.com/en-us/free/).
-A computer running a Desktop OS such as WIndows, Mac or Linux with a browser such as Edge, Chrome or Firefox
+1. A Microsoft Azure Account. You can sign up for a free trial [here](https://azure.microsoft.com/en-us/free/).
+2. A computer running a Desktop OS such as WIndows, Mac or Linux with a browser such as Edge, Chrome or Firefox
 
 
 ### What you will learn
@@ -21,7 +21,7 @@ At the end of this session you should hopefully have a bit of insight into Azure
 
 ## Additional Content
 
-- Channel9 ASR Content - [Here](https://channel9.msdn.com/Series/Azure-Site-Recovery)
+- Channel 9 ASR Content - [Here](https://channel9.msdn.com/Series/Azure-Site-Recovery)
 - Microsoft Tech ASR Content - [Here](https://docs.microsoft.com/en-us/azure/site-recovery/)
     - Replicating different workloads - [Here](https://docs.microsoft.com/en-us/azure/site-recovery/site-recovery-active-directory)
 - Azure Site Recovery Deep Dive - [Here](https://channel9.msdn.com//Series/Azure-Site-Recovery/Azure-Site-Recovery-Deep-Dive/)
