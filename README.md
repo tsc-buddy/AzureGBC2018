@@ -1,26 +1,16 @@
 # Azure Recovery Services
 
-Welcome! This repo has a bunch of content 
+Welcome! This repo has a bunch of content that will be getting covered in the Global Azure Bootcamp Auckland event for 2018. Here you can find the steps which we shall go through in the lab, the slide desk and some links to information hosted on tech, MVA and channel 9.
 
 # Content
 
-# What You will need
+## What will you need for the lab?
+A Microsoft Azure Account. You can sign up for a free trial [here](https://azure.microsoft.com/en-us/free/).
+A computer running a Desktop OS such as WIndows, Mac or Linux with a browser such as Edge, Chrome or Firefox
 
 
+## What you will learn
 
-# What you will learn
+At the end of this session you should hopefully have a bit of insight into Azure Recovery Services and how you can leverage them for migration, DR and backup purposes. An area we shall pay specific attention on is around Azure Site Recovery, you should be leaving with an understanding around the approach you should be taking when considering ASR as a DR or Migration solution.
 
-To complete this workshop you'll need the following:
-
-A Microsoft Azure Account. You can sign up for a free trial here.
-A computer running Windows, OSX or Linux (desktop OS) with an up-to-date version of either Chrome, Firefox, Edge or Opera.
-Prerequisite Knowledge
-Basic knowledge of Compute and Virutalization (Hyper-V, VMWare, Cloud compute)
-Basic knowledge of text editors (Notepad++ or Vim or VS Code)
-Basic knowledge of using text based consoles (Bash, Cmd, PowerShell)
-What You Will Learn
-You'll learn the basics in the following skills:
-
-Create and use the Azure Cloud Shell.
-Use the Azure CLI (az) to create and delete an Azure Container Service.
-Use the Kubernetes tools (kubectl) to deploy and manage highly available container applications.
+## Lab Steps
