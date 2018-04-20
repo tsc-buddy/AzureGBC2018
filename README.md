@@ -54,6 +54,7 @@ d. Review summary and select Create.
 ![alt text](/Images/RecoveryVault-1.png)
 
 3. When creating your vault, provide it a name, resource group and ensure its location is in a different region to where you VM was deployed.
+
 ###--------// IMPORTANT- If the vault is in the same region as your VM, you cannot use it \\---------
 
 ![alt text](/Images/RecoveryVault2.png)
@@ -64,7 +65,22 @@ d. Review summary and select Create.
 
 ### Replicating 
 
+Once all of your resources have provisioned, we can now go ahead and enable replication on the VM to another location in Azure.
 
+4. Locate your first virtual machine and go to Operations\Disaster Recovery (preview).
+
+![alt text](/Images/locatevm.png)
+![alt text](/Images/DROperation.png)
+
+5. From here, Azure will populate all the fields below. Check over them to make sure there are no errors.
+    - The Recovery vault you made in the previous step should be set by default. Click 'Enable Replication'
+
+![alt text](/Images/configdr-vm.png)
+
+
+Azure will now create your replication plan, resource group, vnet and start replicating your VM. It will do so by storing data in a storage cache account. This will take some time to setup. Periodically check back to see the status.
+
+![alt text](/Images/replicationstatus.png)
 
 
 ## Additional Content
