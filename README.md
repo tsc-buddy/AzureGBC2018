@@ -80,7 +80,7 @@ Once all of your resources have provisioned, we can now go ahead and enable repl
 
 Azure will now create your replication plan, resource group, vnet and start replicating your VM. It will do so by storing data in a storage cache account. This will take some time to setup. Periodically check back to see the status.
 
-![alt text](/Images/replicationstatus.png)
+![alt text](/Images/Replicationstatus.png)
 
 
 ## Additional Content
