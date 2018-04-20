@@ -55,6 +55,7 @@ d. Review summary and select Create.
 
 3. When creating your vault, provide it a name, resource group and ensure its location is in a different region to where you VM was deployed.
 ###--------// IMPORTANT- If the vault is in the same region as your VM, you cannot use it \\---------
+
 ![alt text](/Images/RecoveryVault2.png)
 
 
