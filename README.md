@@ -83,6 +83,48 @@ Azure will now create your replication plan, resource group, vnet and start repl
 ![alt text](/Images/Replicationstatus.png)
 
 
+
+### Failover
+
+Once you have 100 sync and protected status on your virtual machine, you can go ahead and either complete a test failover or a live failover. If you opt to do a failover prior to running a test, Azure will pop up with a warning just to make you aware that you have not carried out a test failover yet.
+
+![alt text](/Images/Replicationstatus.png)
+
+
+6. Navigate to your Recovery Vault, then go to Protected Items\Replicated Items
+
+![alt text](/Images/failover1.png)
+
+7. Select the VM you with to failover & select failover (if you choose test failover, just follow the azure blades, they will be similar to a real failover).
+
+![alt text](/Images/failover2.png)
+
+8. You will receive a warning like below if you are yet to do a test failover.
+
+![alt text](/Images/failoverwarning.png)
+
+
+9. Select your recovery point option. (last processed Low RTO may be the quickest).
+
+![alt text](/Images/failover3.png)
+
+
+10. Submit and your failover will be triggered. To view the jobs progress go back a blade to your Recovery Vault \ Monitoring and Reports\Jobs.
+
+![alt text](/Images/jobs.png)
+
+The failover will take some time, once it is finished you should see the VM running in your destination region. You will notice the other VM has been deallocated and stopped.
+
+![alt text](/Images/redgreen.png)
+
+
+
+So you have successfully replicated workloads within Azure ASR. The process you under took is similar to what you would go through in the event of replicating workloads from on-prem. Your next steps would be to look into some of the content below, get familiar with the scenario specific to your environments and look work through the plan // prep // execute approach of ASR.
+
+Good Luck and thanks for following.
+
+
+
 ## Additional Content
 
 - Channel 9 ASR Content - [Here](https://channel9.msdn.com/Series/Azure-Site-Recovery)
