@@ -11,16 +11,16 @@ Welcome! This repo has a bunch of content that will be getting covered in the Gl
 
 ### What you will learn
 
-At the end of this session you should hopefully have a bit of insight into Azure Recovery Services and how you can leverage them for migration, DR and backup purposes. An area we shall pay specific attention to is Azure Site Recovery, you should be leaving with an understanding around the approach you should be taking when considering ASR as a DR or Migration solution and some of the considerations to keep in mind when planning, prepping and executing.
+At the end of this session you should hopefully have a bit of insight into Azure Recovery Services and how you can leverage them for migration and DR purposes. An area we shall pay specific attention to is Azure Site Recovery, you should be leaving with an understanding around the approach you should be taking when considering ASR as a DR or Migration solution and some of the considerations to keep in mind when planning, prepping and executing.
 
-During the following lab, we shall deploy a small environment consisting of a virtual machine, Vnet, storage accounts and the components required for it to run followed by an Azure Recovery Services Vault. From here, we will enable replication of the VM to another region of Azure and run through some of the recovery plan options that you have available....
+During the following lab, we shall deploy a small environment consisting of a virtual machine, Vnet, storage accounts and the components required for it to run followed by an Azure Recovery Services Vault. From here, we will enable replication of the VM to another region of Azure....
 
 
 ## Lab Steps
 
 ### Deploying VM Resources in Azure
 
-First up, once you are logged in, lets create the resources we need for this lab.
+First up, once you are logged into Azure, lets create the resources we need for this lab.
 
 1. Select 'Create a resource' and look for 'Windows Server 2016 VM'
 
@@ -30,7 +30,7 @@ a. Complete Step 1 of New VM Wizard - Basic Info.
 
 ![alt text](/Images/2-VMstep1.png)
 
-b. Complete Step 2 of New VM Wizard - Select a Size of your Choice by clicking View All. D2s_V3 is a good base size.
+b. Complete Step 2 of New VM Wizard - Select a Size of your choice by clicking View All. D2s_V3 is a good base size.
 
 ![alt text](/Images/3-VMStep2.png)
 
@@ -53,7 +53,7 @@ d. Review summary and select Create.
 
 ![alt text](/Images/RecoveryVault-1.png)
 
-3. When creating your vault, provide it a name, resource group and ensure its location is in a different region to where you VM was deployed.
+3. When creating your vault, provide it a name, resource group and ensure its location is in a different region to where your VM was deployed.
 
 ###--------// IMPORTANT- If the vault is in the same region as your VM, you cannot use it \\---------
 
@@ -65,7 +65,7 @@ d. Review summary and select Create.
 
 ### Replicating 
 
-Once all of your resources have provisioned, we can now go ahead and enable replication on the VM to another location in Azure.
+Once all of your resources have provisioned, we can go ahead and enable replication on the VM to another location in Azure.
 
 4. Locate your first virtual machine and go to Operations\Disaster Recovery (preview).
 
@@ -80,13 +80,15 @@ Once all of your resources have provisioned, we can now go ahead and enable repl
 
 Azure will now create your replication plan, resource group, vnet and start replicating your VM. It will do so by storing data in a storage cache account. This will take some time to setup. Periodically check back to see the status.
 
+While your waiting, feel free to go and get familiar with the settings available in your Recovery vault - Replication plans, recovery plans etc etc.
+
 ![alt text](/Images/Replicationstatus.png)
 
 
 
 ### Failover
 
-Once you have 100 sync and protected status on your virtual machine, you can go ahead and either complete a test failover or a live failover. If you opt to do a failover prior to running a test, Azure will pop up with a warning just to make you aware that you have not carried out a test failover yet.
+Once you have 100 sync and protected status on your virtual machine, you can go ahead and either complete a test failover or a live failover. If you opt to do a failover prior to running a test one, Azure will pop up with a warning just to make you aware that you have not carried out a test failover yet.
 
 ![alt text](/Images/Replicationstatus.png)
 
@@ -95,7 +97,7 @@ Once you have 100 sync and protected status on your virtual machine, you can go 
 
 ![alt text](/Images/failover1.png)
 
-7. Select the VM you with to failover & select failover (if you choose test failover, just follow the azure blades, they will be similar to a real failover).
+7. Select the VM you wish to failover & click failover (if you choose test failover, just follow the azure blades, they will be similar to a real failover, you will just be required to choose your test vnet).
 
 ![alt text](/Images/failover2.png)
 
@@ -109,7 +111,7 @@ Once you have 100 sync and protected status on your virtual machine, you can go 
 ![alt text](/Images/failover3.png)
 
 
-10. Submit and your failover will be triggered. To view the jobs progress go back a blade to your Recovery Vault \ Monitoring and Reports\Jobs.
+10. Click Submit and your failover will be triggered. To view the jobs progress go back a blade to your Recovery Vault \ Monitoring and Reports\Jobs.
 
 ![alt text](/Images/jobs.png)
 
@@ -118,8 +120,16 @@ The failover will take some time, once it is finished you should see the VM runn
 ![alt text](/Images/redgreen.png)
 
 
+As there is no Recovery plan setup, the VM at the destination will not have a public ip address for you to access it via. Should you wish to login to the VM after the failover. You will need to create a new Public IP address and associate it with the VM.
 
-So you have successfully replicated workloads within Azure ASR. The process you under took is similar to what you would go through in the event of replicating workloads from on-prem. Your next steps would be to look into some of the content below, get familiar with the scenario specific to your environments and look work through the plan // prep // execute approach of ASR.
+If the VM is in a running state, Azure has finished the replication job.
+
+
+### Well Done!!!
+
+So you have successfully replicated workloads within Azure using ASR. The process you under took is similar to what you would go through when replicating workloads from on-prem. Your next steps would be to look into some of the content below, get familiar with the scenario specific to your environments and work through the plan // prep // execute approach of ASR.
+
+The content will go into some Recovery plan designs and how you would use Azure Automation to orchestrate failover of your workloads.
 
 Good Luck and thanks for following.
 
