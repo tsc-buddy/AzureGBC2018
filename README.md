@@ -58,18 +58,11 @@ d. Review summary and select Create.
 
 ![alt text](/Images/RecoveryVault2.png)
 
+![alt text](/Images/BEAWARE.png)
 
 
 
-a.
-b.- Choose a location different to where your VM is.
-
-3. (Optional) Deploy a second VM to the same Vnet to simulate a multi-tier app
-
-
-4. 
-
-
+### Replicating 
 
 
 
