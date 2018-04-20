@@ -18,27 +18,50 @@ During the following lab, we shall deploy a small environment consisting of a vi
 
 ## Lab Steps
 
-### Deploying Resources in Azure
+### Deploying VM Resources in Azure
 
 First up, once you are logged in, lets create the resources we need for this lab.
 
 1. Select 'Create a resource' and look for 'Windows Server 2016 VM'
+
 ![alt text](/Images/1-CreateResource.png)
 
-a. Complete Step 1 of New VM Wizard - Basic Info
+a. Complete Step 1 of New VM Wizard - Basic Info.
+
 ![alt text](/Images/2-VMstep1.png)
 
 b. Complete Step 2 of New VM Wizard - Select a Size of your Choice by clicking View All. D2s_V3 is a good base size.
+
 ![alt text](/Images/3-VMStep2.png)
 
-c.
-d.
+c. Complete Step 3 of New VM Wizard - Leave these settings as default as it should just create a new VNet for you. If you have an existing Vnet, just check this config and whether you are happy for the VM to join it.
 
-2. Create Recovery Vault - Choose a location different to where your VM is.
+![alt text](/Images/4-VMStep3.png)
 
-3. Enabling DR on the VM
+d. Review summary and select Create.
+
+![alt text](/Images/5-VMStep4.png)
+
+## ---------// Once this VM is deployed, if you wish to add more than a single VM to your DR plan, run through the above again and deploy another to same VNET \\---------
+
+
+
+
+### Deploying Azure Recovery Services Vault
+
+2. Select 'Create a resource' & search for 'Backup and Site Recovery (OMS)' 
+
+![alt text](/Images/RecoveryVault-1.png)
+
+3. When creating your vault, provide it a name, resource group and ensure its location is in a different region to where you VM was deployed.
+###--------// IMPORTANT- If the vault is in the same region as your VM, you cannot use it \\---------
+![alt text](/Images/RecoveryVault2.png)
+
+
+
+
 a.
-b.
+b.- Choose a location different to where your VM is.
 
 3. (Optional) Deploy a second VM to the same Vnet to simulate a multi-tier app
 
