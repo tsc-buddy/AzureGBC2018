@@ -13,7 +13,7 @@ Welcome! This repo has a bunch of content that will be getting covered in the Gl
 
 At the end of this session you should hopefully have a bit of insight into Azure Recovery Services and how you can leverage them for migration and DR purposes. An area we shall pay specific attention to is Azure Site Recovery, you should be leaving with an understanding around the approach you should be taking when considering ASR as a DR or Migration solution and some of the considerations to keep in mind when planning, prepping and executing.
 
-During the following lab, we shall deploy a small environment consisting of a virtual machine, Vnet, storage accounts and the components required for it to run followed by an Azure Recovery Services Vault. From here, we will enable replication of the VM to another region of Azure....
+During the following lab, we shall deploy a small environment consisting of a virtual machine, Vnet, storage accounts, and the components required for us to replicate / migrate the workloads. From here, we will enable replication of the VM to another region of Azure....
 
 
 ## Lab Steps
@@ -34,15 +34,15 @@ b. Complete Step 2 of New VM Wizard - Select a Size of your choice by clicking V
 
 ![alt text](/Images/3-VMStep2.png)
 
-c. Complete Step 3 of New VM Wizard - Leave these settings as default as it should just create a new VNet for you. If you have an existing Vnet, just check this config and whether you are happy for the VM to join it.
+c. Complete Step 3 of the New VM Wizard - Leave these settings as default as it should just create a new VNet for you. If you have an existing Vnet, just check this config and whether you are happy for the VM to join it.
 
 ![alt text](/Images/4-VMStep3.png)
 
-d. Review summary and select Create.
+d. Review summary and select 'Create'.
 
 ![alt text](/Images/5-VMStep4.png)
 
-## ---------// Once this VM is deployed, if you wish to add more than a single VM to your DR plan, run through the above again and deploy another to same VNET \\---------
+## ---------// Once this VM is deployed, if you wish to add more than a single VM to your environment, run through the above again and deploy another to same VNET \\---------
 
 
 
@@ -78,9 +78,9 @@ Once all of your resources have provisioned, we can go ahead and enable replicat
 ![alt text](/Images/configdr-vm.png)
 
 
-Azure will now create your replication plan, resource group, vnet and start replicating your VM. It will do so by storing data in a storage cache account. This will take some time to setup. Periodically check back to see the status.
+Azure will now create your replication plan, resource group, vnet and start replicating your VM. It will do so by storing data in a storage cache account. This will take a few minutes to setup. Periodically check back to see the status.
 
-While your waiting, feel free to go and get familiar with the settings available in your Recovery vault - Replication plans, recovery plans etc etc.
+While your waiting, feel free to go and get familiar with the settings available in your Recovery vault.
 
 ![alt text](/Images/Replicationstatus.png)
 
@@ -120,7 +120,7 @@ The failover will take some time, once it is finished you should see the VM runn
 ![alt text](/Images/redgreen.png)
 
 
-As there is no Recovery plan setup, the VM at the destination will not have a public ip address for you to access it via. Should you wish to login to the VM after the failover. You will need to create a new Public IP address and associate it with the VM.
+As there is no Recovery plan or automation setup, the VM at the destination will not have a public ip address for you to access it via. Should you wish to login to the VM after the failover. You will need to create a new Public IP address and associate it with the VM.
 
 If the VM is in a running state, Azure has finished the replication job.
 
